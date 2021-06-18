@@ -1,0 +1,20 @@
+{
+  "buildOptions": {
+    "clean": true,
+    "out": "build"
+  },
+  "root": "/src",
+  "mount": {
+    "public": "/",
+    "src": "/assets"
+  },
+  "plugins": [
+    "@snowpack/plugin-babel",
+    "@snowpack/plugin-sass"
+  ],
+  "optimize": {
+    "bundle": true,
+    "minify": true,
+    "target": "es2018"
+  }
+}

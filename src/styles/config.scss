@@ -1,0 +1,20 @@
+:root {
+  --bg: #EDF2F8;
+  --white: #F8F8F8;
+  --gray: #DBE2EF;
+  --dark-gray:  #3c3c3c66;
+  --purple: #8A2BE2;
+  --purple-light: #9370DB;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  overflow-x: hidden;
+  font-family: 'Nunito','Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
