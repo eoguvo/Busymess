@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../build/assets/main.js"],
+  "sourcesContent": ["console.log(\"foi o/\");"],
+  "mappings": "AAAA,QAAQ,IAAI",
+  "names": []
+}
