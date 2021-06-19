@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./assets/styles/main.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/sortablejs@1.13.0/Sortable.min.js"></script>
   <title>Busymess</title>
 </head>
 <body>
@@ -17,8 +18,8 @@
   <main>
     <div class="board">
       <h2>Todo</h2>
-      <ul class="todo">
-        <li draggable="true">
+      <ul class="todo" id="0">
+        <li>
           <span class="category"></span>
           <p class="description">fazer funcionar e pa</p>
         </li>
@@ -26,12 +27,12 @@
     </div>
     <div class="board">
       <h2>Doing</h2>
-      <ul class="doing">
-        <li draggable="true">
+      <ul class="doing" id="1">
+        <li>
           <span class="category"></span>
           <p class="description">estudando e pa</p>
         </li>
-        <li draggable="true">
+        <li>
           <span class="category"></span>
           <p class="description">treininho e pa</p>
         </li>
@@ -39,16 +40,16 @@
     </div>
     <div class="board">
       <h2>Done</h2>
-      <ul class="done">
-        <li draggable="true">
+      <ul class="done" id="2">
+        <li>
           <span class="category"></span>
           <p class="description">os estilos e pa</p>
         </li>
-        <li draggable="true">
+        <li>
           <span class="category"></span>
           <p class="description">os side project e pa</p>
         </li>
-        <li draggable="true">
+        <li>
           <span class="category"></span>
           <p class="description">Lorem ipsum dolor sit amet e pa</p>
         </li>

@@ -4,7 +4,6 @@
   "main": "index.js",
   "license": "UNLICENSED",
   "scripts": {
-    "sass:dev": "sass --watch src/styles/main.scss dist/assets/styles/main.css",
     "dev": "snowpack dev",
     "build": "snowpack build",
     "deploy": "npm run build && gh-pages --dist build"
