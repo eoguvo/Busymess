@@ -1,6 +1,7 @@
 .toggleTheme {
   position: absolute;
-  right: 5%;
+  margin: 1rem 0 0 1rem;
+  right: 2.5rem;
 }
 
 main {
