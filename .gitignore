@@ -1,6 +1,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/node,yarn,vscode
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,yarn,vscode
 
+/build/
+
 ### Node ###
 # Logs
 logs
