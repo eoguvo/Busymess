@@ -1,3 +1,8 @@
+.toggleTheme {
+  position: absolute;
+  right: 5%;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -21,7 +26,8 @@ ul {
 }
 
 li {
-  width: 300px;
+  width: 80vw;
+  max-width: 300px;
   min-height: 120px;
   background-color: var(--white);
   border-radius: 8px;
@@ -40,7 +46,7 @@ li:after {
   position: absolute;
   height: 16px;
   top: 0; left: 0; right: 0;
-  background-color: rgba(230,236,245,0.4);
+  background-color: var(--after);
   border-radius: 8px 8px 0 0;
   z-index: -1;
 }
