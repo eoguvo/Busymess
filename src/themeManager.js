@@ -1,33 +1,33 @@
 const $ = document.querySelector.bind(document);
-const html = $("html");
-const themeToggleButton = $(".toggleTheme");
+const html = $('html');
+const themeToggleButton = $('.toggleTheme');
 
 class ThemeManager {
   constructor() {
-    const theme = localStorage.getItem("theme") || 
-      window.matchMedia('(prefers-color-scheme: dark)')
-        .matches ? "dark" : "light";
+    const theme = localStorage.getItem('theme')
+      || window.matchMedia('(prefers-color-scheme: dark)')
+        .matches ? 'dark' : 'light';
 
     html.dataset.theme = theme;
-    
+
     this.changeIcon();
-    themeToggleButton.addEventListener("click", () => this.toggleTheme());
+    themeToggleButton.addEventListener('click', () => this.toggleTheme());
   }
 
   toggleTheme() {
-    const theme = this.isLight() ? "dark" : "light";
+    const theme = this.isLight() ? 'dark' : 'light';
     html.dataset.theme = theme;
-    localStorage.setItem("theme", theme);
-  
+    localStorage.setItem('theme', theme);
+
     this.changeIcon();
   }
 
   changeIcon() {
     const icon = this.isLight() ? 'moon' : 'sun';
-    themeToggleButton.innerHTML = `<img width="24" height="24" src="./assets/img/${icon}.svg" alt="${icon}" />`
+    themeToggleButton.innerHTML = `<img width="24" height="24" src="./assets/img/${icon}.svg" alt="${icon}" />`;
   }
 
-  isLight = () => html.dataset.theme === "light";
+  isLight = () => html.dataset.theme === 'light';
 }
 
-const themeManager = new ThemeManager();
+new ThemeManager();

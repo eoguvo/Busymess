@@ -1,23 +1,23 @@
-export const mock = [
+export default [
   {
-    title: "todo",
+    title: 'todo',
     items: [
-      { "description": "fazer funcionar e pa" }
-    ]
+      { description: 'fazer funcionar e pa' },
+    ],
   },
   {
-    title: "doing", 
+    title: 'doing',
     items: [
-      { "description": "estudando e pa" },
-      { "description": "treininho e pa" }
-    ]
+      { description: 'estudando e pa' },
+      { description: 'treininho e pa' },
+    ],
   },
   {
-    title: "done", 
+    title: 'done',
     items: [
-      { "description": "os estilos e pa" },
-      { "description": "os side project e pa" },
-      { "description": "lorem ipsum dolor sit amet e pa" }
-    ]
-  }
-]
+      { description: 'os estilos e pa' },
+      { description: 'os side project e pa' },
+      { description: 'lorem ipsum dolor sit amet e pa' },
+    ],
+  },
+];
