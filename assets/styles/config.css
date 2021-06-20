@@ -4,20 +4,18 @@
   --gray: #DBE2EF;
   --dark-gray: #3c3c3c66;
   --purple: #8A2BE2;
-  --purple-light: #9370DB;
+  --purple-light: #7159c1;
   --after: rgba(230,236,245,0.4);
   --text: #000;
-  --special: var(--purple);
 }
 
 html[data-theme=dark] {
-  --special: #FFC107;
   --bg: #1f2223;
   --white: #1c1e1f;
   --gray: #272a2c;
   --dark-gray: #3c3c3c66;
   --purple: #6518ac;
-  --purple-light: #9370DB;
+  --purple-light: #7159c1;
   --after: rgba(34, 37, 38, 0.4);
   --text: #e8e6e3;
 }
@@ -33,5 +31,5 @@ body {
   color: var(--text);
   overflow-x: hidden;
   font-family: "Nunito", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
