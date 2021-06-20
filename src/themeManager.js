@@ -2,17 +2,32 @@ const $ = document.querySelector.bind(document);
 const html = $("html");
 const themeToggleButton = $(".toggleTheme");
 
-const toggleTheme = () => {
-  const theme = isLight() ? "dark" : "light";
-  html.dataset.theme = theme;
-  localStorage.setItem("theme", theme);
+class ThemeManager {
+  constructor() {
+    const theme = localStorage.getItem("theme") || 
+      window.matchMedia('(prefers-color-scheme: dark)')
+        .matches ? "dark" : "light";
 
-  themeToggleButton.innerHTML = `<i class="fas fa-${isLight() ? 'moon' : 'sun'}"></i>`
+    html.dataset.theme = theme;
+    
+    this.changeIcon();
+    themeToggleButton.addEventListener("click", () => this.toggleTheme());
+  }
+
+  toggleTheme() {
+    const theme = this.isLight() ? "dark" : "light";
+    html.dataset.theme = theme;
+    localStorage.setItem("theme", theme);
+  
+    this.changeIcon();
+  }
+
+  changeIcon() {
+    const icon = this.isLight() ? 'moon' : 'sun';
+    themeToggleButton.innerHTML = `<img width="24" height="24" src="./assets/img/${icon}.svg" alt="${icon}" />`
+  }
+
+  isLight = () => html.dataset.theme === "light";
 }
 
-const isLight = () => html.dataset.theme === "light"
-
-const theme = localStorage.getItem("theme") || "dark";
-html.dataset.theme = theme;
-
-themeToggleButton.addEventListener("click", toggleTheme);
+const themeManager = new ThemeManager();

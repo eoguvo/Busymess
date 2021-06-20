@@ -3,7 +3,6 @@
     "clean": true,
     "out": "build"
   },
-  "root": "/src",
   "mount": {
     "public": "/",
     "src": "/assets"
