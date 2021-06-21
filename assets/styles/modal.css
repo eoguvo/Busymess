@@ -1,0 +1,91 @@
+.activeModal {
+  background-color: var(--purple-light);
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  border: none;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0px 4px 4px #00000040;
+  cursor: pointer;
+}
+.activeModal img {
+  filter: drop-shadow(0px 4px 4px #00000040);
+}
+
+.modal {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00000066;
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+.modal.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal__content {
+  padding: 2.4rem;
+  width: 70%;
+  max-width: 500px;
+  border-radius: 0.5rem;
+  background-color: var(--gray);
+}
+
+.modal__content h2 {
+  margin: 2rem 0 0.8rem 0;
+  color: var(--text);
+}
+
+.input_group {
+  margin-top: 0.8rem;
+}
+
+.submit_buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submit_buttons button {
+  width: 48%;
+  height: 50px;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.submit_buttons .cancel {
+  border: 2px solid #8A2BE2;
+  color: #8A2BE2;
+  background: transparent;
+  opacity: 0.4;
+}
+.submit_buttons .cancel:hover {
+  opacity: 1;
+  transition: all 0.3s ease 0s;
+}
+
+.submit_buttons .submit {
+  color: var(--gray);
+  background-color: var(--purple);
+  border: none;
+}
+.submit_buttons .submit:hover {
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 700;
+  letter-spacing: 3px;
+  box-shadow: 0px 5px 40px -10px #00000091;
+  background: none;
+}

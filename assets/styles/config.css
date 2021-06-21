@@ -33,3 +33,23 @@ body {
   font-family: "Nunito", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.screenOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border-width: 0px;
+}
+
+input, select {
+  color: var(--text);
+  width: 100%;
+  background-color: var(--white);
+  padding: 0.8rem;
+  border-radius: 0.2rem;
+  border: none;
+}

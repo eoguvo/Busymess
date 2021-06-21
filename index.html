@@ -30,13 +30,14 @@
 
   <title>Busymess | Organize your life</title>
 </head>
+
 <body>
   <header>
-    <img src="./assets/img/busymess.svg" alt="busymess logo" class="logo">
+    <img src="./img/busymess.svg" alt="busymess logo" class="logo">
   </header>
-  
+
   <span class="toggleTheme">
-    <img width="24" height="24" src="./assets/img/moon.svg" alt="moon">
+    <img width="24" height="24" src="./img/moon.svg" alt="moon">
   </span>
   <main>
     <div class="board">
@@ -53,6 +54,42 @@
     </div>
   </main>
 
+
+  <button class="activeModal">
+    <img src="./img/plus.svg" alt="add">
+  </button>
+
+  <!-- #TODO: -->
+  <div class="hidden modal">
+    <div class="modal__content">
+      <h2>Criar item</h2>
+      <form>
+        <div class="input_group">
+          <label class="screenOnly" for="description">Descrição</label>
+          <input type="text" name="description" id="description" placeholder="Descrição">
+        </div>
+
+        <div class="input_group">
+          <label class="screenOnly" for="category">Category</label>
+
+          <select name="category" id="category">
+            <option value selected disabled hidden>Selecione um rótulo</option>
+            <option value="#000" style="background-color:#000; color: #fff">Critico</option>
+            <option value="#7159c1" style="background-color:#7159c1">Alta prioridade</option>
+            <option value="#FFC107" style="background-color:#FFC107">Baixa prioridade</option>
+            <option value="#5a92db" style="background-color:#5a92db">Neutro</option>
+          </select>
+        </div>
+
+        <div class="submit_buttons input_group">
+          <button class="cancel" type="button">Cancelar</button>
+          <button class="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <script type="module" src="assets/main.js"></script>
+
 
 </body></html>
