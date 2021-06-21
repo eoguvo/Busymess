@@ -1,17 +1,27 @@
 import Sortable from 'sortablejs';
-import mock from './mock';
+import initialItems from './initialItems';
+import ModalManager from './modalManager';
 import './themeManager';
 
 const $$ = document.querySelectorAll.bind(document);
 
 class App {
   constructor() {
+    this.todos = JSON.parse(localStorage.getItem('boards')) || initialItems;
+    this.modalManager = new ModalManager(this.todos);
+
+    this.boards = $$('.board ul');
     this.init();
   }
 
   init() {
-    this.todos = JSON.parse(localStorage.getItem('boards')) || mock || [];
-    this.boards = $$('.board ul');
+    this.modalManager.form
+      .addEventListener('submit', (e) => {
+        e.preventDefault();
+        this.modalManager.submit(this.todos);
+        this.save();
+        this.render();
+      });
 
     this.boards.forEach((el) => {
       new Sortable(el, {
@@ -23,7 +33,10 @@ class App {
           }
         ) => {
           this.todos[target.id].items.splice(oldIndex, 1);
-          this.todos[to.id].items.splice(newIndex, 0, { description: item.innerText });
+          const category = item.querySelector('span').style.backgroundColor;
+          this.todos[to.id].items.splice(newIndex, 0,
+            { description: item.innerText, category });
+
           this.save();
         }
       });
@@ -38,16 +51,16 @@ class App {
     this.boards.forEach((board, i) => {
       board.innerHTML = '';
 
-      this.todos[i].items.forEach(({ description }) => {
-        board.innerHTML += this.template(description);
+      this.todos[i].items.forEach((el) => {
+        board.innerHTML += this.template(el);
       });
     });
   }
 
-  template = (text) => `
+  template = ({ description, category }) => `
     <li>
-      <span class="category"></span>
-      <p class="description">${text}</p>
+      <span class="category" style="background-color: ${category}"></span>
+      <p class="description">${description}</p>
     </li>`
 }
 

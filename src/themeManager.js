@@ -5,8 +5,7 @@ const themeToggleButton = $('.toggleTheme');
 class ThemeManager {
   constructor() {
     const theme = localStorage.getItem('theme')
-      || window.matchMedia('(prefers-color-scheme: dark)')
-        .matches ? 'dark' : 'light';
+      || this.isLight() ? 'light' : 'dark';
 
     html.dataset.theme = theme;
 
@@ -24,7 +23,7 @@ class ThemeManager {
 
   changeIcon() {
     const icon = this.isLight() ? 'moon' : 'sun';
-    themeToggleButton.innerHTML = `<img width="24" height="24" src="./assets/img/${icon}.svg" alt="${icon}" />`;
+    themeToggleButton.innerHTML = `<img width="24" height="24" src="./img/${icon}.svg" alt="${icon}" />`;
   }
 
   isLight = () => html.dataset.theme === 'light';

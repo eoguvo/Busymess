@@ -13,7 +13,8 @@
     "rules": {
         "no-param-reassign": "off",
         "comma-dangle": "off",
-        "no-new": "off"
+        "no-new": "off",
+        "no-alert": "off"
     },
     "parser": "babel-eslint"
 }
