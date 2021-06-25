@@ -12,6 +12,7 @@ class App {
 
     this.boards = $$('.board ul');
     this.init();
+    this.count = 0;
   }
 
   init() {
@@ -19,8 +20,8 @@ class App {
       .addEventListener('submit', (e) => {
         e.preventDefault();
         this.modalManager.submit(this.todos);
-        this.save();
         this.render();
+        this.save();
       });
 
     this.boards.forEach((el) => {
@@ -37,6 +38,7 @@ class App {
           this.todos[to.id].items.splice(newIndex, 0,
             { description: item.innerText, category });
 
+          this.render();
           this.save();
         }
       });
@@ -49,19 +51,21 @@ class App {
 
   render() {
     this.boards.forEach((board, i) => {
-      board.innerHTML = '';
+      let boardFragment = '';
 
-      this.todos[i].items.forEach((el) => {
-        board.innerHTML += this.template(el);
+      this.todos[i].items.forEach(({ description, category }, j) => {
+        boardFragment += this.template({
+          description, category, i, j
+        });
       });
+
+      board.innerHTML = boardFragment;
     });
   }
 
-  template = ({ description, category }) => `
-    <li>
-      <span class="category" style="background-color: ${category}"></span>
-      <p class="description">${description}</p>
-    </li>`
+  template = ({
+    description, category, i, j
+  }) => `<li id="${i} ${j}"><span class="category" style="background-color: ${category}"></span><p class="description">${description}</p></li>`
 }
 
 new App();
