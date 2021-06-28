@@ -1,7 +1,10 @@
-import Sortable from 'sortablejs';
-import initialItems from './initialItems';
-import ModalManager from './modalManager';
-import './themeManager';
+import Sortable from 'sortablejs/modular/sortable.core.esm';
+import initialItems, { categories } from './modules/initialItems';
+import ModalManager from './modules/modalManager';
+import Util from './modules/util';
+
+import './modules/themeManager';
+import './modules/material';
 
 const $$ = document.querySelectorAll.bind(document);
 
@@ -54,8 +57,12 @@ class App {
       let boardFragment = '';
 
       this.todos[i].items.forEach(({ description, category }, j) => {
+        const parsedRGB = category.replace(/([a-z()])/g, '').split(',');
+        const hex = Util.RGBToHex(parsedRGB).toUpperCase();
+        const title = categories[hex];
+
         boardFragment += this.template({
-          description, category, i, j
+          description, category, i, j, title
         });
       });
 
@@ -64,8 +71,8 @@ class App {
   }
 
   template = ({
-    description, category, i, j
-  }) => `<li id="${i} ${j}"><span class="category" style="background-color: ${category}"></span><p class="description">${description}</p></li>`
+    description, category, i, j, title
+  }) => `<li id="${i} ${j}"><span title="${title}" class="category" style="background-color: ${category}"></span><p class="description">${description}</p></li>`
 }
 
 new App();
