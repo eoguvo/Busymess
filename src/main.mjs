@@ -57,12 +57,15 @@ class App {
       let boardFragment = '';
 
       this.todos[i].items.forEach(({ description, category }, j) => {
-        const parsedRGB = category.replace(/([a-z()])/g, '').split(',');
-        const hex = Util.RGBToHex(parsedRGB).toUpperCase();
-        const title = categories[hex];
+        let hex = category;
+
+        if (!category.startsWith('#')) {
+          const parsedRGB = category.replace(/([a-z()])/g, '').split(',');
+          hex = Util.RGBToHex(parsedRGB);
+        }
 
         boardFragment += this.template({
-          description, category, i, j, title
+          description, category, i, j, title: categories[hex]
         });
       });
 
