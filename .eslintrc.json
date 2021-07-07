@@ -14,7 +14,9 @@
         "no-param-reassign": "off",
         "comma-dangle": "off",
         "no-new": "off",
-        "no-alert": "off"
+        "no-alert": "off",
+        "import/no-unresolved": "off",
+        "import/extensions": "off"
     },
     "parser": "babel-eslint"
 }

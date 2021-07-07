@@ -1,4 +1,4 @@
-import Sortable from 'sortablejs/modular/sortable.core.esm';
+import { Sortable } from 'https://cdn.skypack.dev/pin/sortablejs@v1.14.0-xkIGomGWMcqksj4ySXdu/mode=imports,min/optimized/sortablejs.js';
 import initialItems, { categories } from './modules/initialItems';
 import ModalManager from './modules/modalManager';
 import Util from './modules/util';
