@@ -36,6 +36,13 @@ li {
   position: relative;
   z-index: 1;
   cursor: pointer;
+  &:hover button { opacity: 1; }
+
+  & button {
+    opacity: 0;
+    transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
 }
 
 li + li {
@@ -63,5 +70,21 @@ li .category {
 li .description {
   font-size: 1.2rem;
   font-weight: bold;
-  padding-top: .6rem;
+  padding: .6rem 0;
+}
+
+li .close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border-radius: 100%;
+  background-color: transparent;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  &:hover {
+    background-color: #FB364022;
+  }
 }

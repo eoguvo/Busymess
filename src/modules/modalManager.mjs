@@ -1,22 +1,22 @@
-const $ = document.querySelector.bind(document);
+const $ = (className, root = document) => root.querySelector(className);
 
 class ModalManager {
-  constructor() {
-    this.modal = $('.modal');
-    this.form = $('.modal__content form');
-    this.categoryRef = $('#category');
-    this.descriptionRef = $('#description');
+  constructor(className) {
+    this.modal = $(`.modal.${className}`);
+    this.form = $('.modal__content form', this.modal);
 
-    const activeBtn = $('.activeModal');
-    activeBtn.addEventListener('click', () => {
+    const activeBtn = $(`.activeModal.${className}`);
+    activeBtn?.addEventListener('click', () => {
       this.modal.classList.remove('hidden');
     });
 
-    const closeBtn = $('.cancel');
-    closeBtn.addEventListener('click', () => this.close());
+    const closeBtn = $('.cancel', this.modal);
+    closeBtn?.addEventListener('click', this.close.bind(this));
   }
 
-  submit(todos) {
+  submit(todos, board = 0, todo = 0) {
+    this.categoryRef = $('#category', this.modal);
+    this.descriptionRef = $('#description', this.modal);
     const category = this.categoryRef.value;
     const description = this.descriptionRef.value;
 
@@ -26,7 +26,11 @@ class ModalManager {
     }
 
     this.close();
-    return todos[0].items.push({ description, category });
+    return todos[board].items.splice(todo, 0, { description, category });
+  }
+
+  show() {
+    this.modal.classList.remove('hidden');
   }
 
   close() {
@@ -35,8 +39,16 @@ class ModalManager {
   }
 
   clear() {
-    this.descriptionRef.value = '';
-    this.categoryRef.selectedIndex = 0;
+    this.form
+      .querySelectorAll('.input_group input, select')
+      .forEach((element) => {
+        if (element.type === 'select-one') {
+          element.selectedIndex = 0;
+          return;
+        }
+
+        element.value = '';
+      });
   }
 }
 

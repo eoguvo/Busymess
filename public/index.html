@@ -57,7 +57,7 @@
     </div>
   </main>
 
-  <div class="activeModal mdc-touch-target-wrapper">
+  <div class="activeModal create mdc-touch-target-wrapper">
     <button class="mdc-fab mdc-fab--touch">
       <div class="mdc-fab__ripple"></div>
       <span class="mdc-fab__icon">
@@ -67,7 +67,7 @@
     </button>
   </div>
 
-  <div class="hidden modal">
+  <div class="hidden modal create">
     <div class="modal__content">
       <h2>Criar item</h2>
       <form>
@@ -98,6 +98,14 @@
             <span class="mdc-button__label">Criar</span>
           </button>
         </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="hidden modal edit">
+    <div class="modal__content">
+      <h2>Editar item</h2>
+      <form class="editForm" onsubmit="return false">
       </form>
     </div>
   </div>
