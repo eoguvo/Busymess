@@ -23,12 +23,13 @@ header img { max-width: 80%; }
 	padding: 1rem .7rem;
 	border-radius: 5px;
 	display: inline-block;
-	border: none;
 	transition: all 0.4s ease-in-out 0s;
   cursor: pointer;
   z-index: 2;
   transition: all .3s $bounce;
-	& a {
+	& button {
+    border: none;
+    background-color: var(--purple);
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
