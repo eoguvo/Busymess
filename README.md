@@ -1,5 +1,5 @@
 <div align="center">
-    <img src=".github/banner.png" alt="header Busymess app"/>
+    <img src="https://raw.githubusercontent.com/Gustavo-Henrique-br/Busymess/master/.github/banner.png" alt="header Busymess app"/>
 </div>
 
 <div align="center">
@@ -16,7 +16,7 @@
 </div>
 
 <div align="center">
-    <img alt="Busymess" src="./src/img/busymess.svg"/>
+    <img alt="Busymess" src="https://raw.githubusercontent.com/Gustavo-Henrique-br/Busymess/master/public/img/busymess.svg"/>
     <p>An pipefy like app to organize your tasks in kanban style using <a href="https://snowpack.dev">snowpack</a></p>
 </div>
 
