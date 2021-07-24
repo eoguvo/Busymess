@@ -8,7 +8,8 @@
     "src": "/assets"
   },
   "plugins": [
-    "@snowpack/plugin-sass"
+    "@snowpack/plugin-sass",
+    "snowpack-plugin-relative-css-urls"
   ],
 
   "optimize": {

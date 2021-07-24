@@ -1,0 +1,21 @@
+@import "./config.scss";
+@import "./about/main.scss";
+@import "./about/content.scss";
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+* { font-family: 'Nunito', sans-serif; }
+
+section { transform: translateY(100px); }
+
+:target::before {
+  content: "";
+  display: block;
+  height: 120px;
+  margin: -120px 0 0;
+}
